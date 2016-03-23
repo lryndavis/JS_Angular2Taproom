@@ -15,7 +15,7 @@ import { NewKegComponent } from './new-keg.component';
   [class.selected]="currentKeg === selectedKeg"
   [keg]="currentKeg">
   </keg-display>
-  <edit-keg-details *ngIf="selectedTask" [task]="selectedTask">
+  <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
   </edit-keg-details>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   `
@@ -32,9 +32,7 @@ export class KegListComponent {
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
   }
-  createKeg(beer: string , brewery: string , alcohol: number, price: number): void {
-    this.kegList.push(
-      new Keg(beer, brewery, alcohol, price, this.kegList.length)
-    );
+  createKeg(keg:Keg): void {
+    this.kegList.push(keg);
   }
 }

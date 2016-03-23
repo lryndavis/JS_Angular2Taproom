@@ -6,7 +6,11 @@ import {Keg} from './keg.model';
   inputs:['keg'],
   template: `
   <div>
-  <label>{{keg.beer}}</label>
+  <h4>{{ keg.beer }}</h4>
+  <p>Brewery: {{ keg.brewery }}</p>
+  <p>Alcohol Content: {{ keg.alcohol }}</p>
+  <p>Price per Keg: {{ keg.price }}</p>
+  <p>Pints Remaining: {{ keg.pint }}</p>
   </div>
   `
 })
