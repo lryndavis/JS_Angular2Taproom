@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, EventEmitter} from 'angular2/core';
 import {Keg} from './keg.model';
 
 @Component ({
@@ -11,10 +11,19 @@ import {Keg} from './keg.model';
   <p>Alcohol Content: {{ keg.alcohol }}</p>
   <p>Price per Keg: {{ keg.price }}</p>
   <p>Pints Remaining: {{ keg.pint }}</p>
+  <button (click)="sellPint(keg)" class="btn btn-success">Sell a pint</button>
   </div>
   `
 })
 
 export class KegComponent {
   public keg: Keg;
+  public onSellPint: EventEmitter<Keg>;
+  constructor() {
+    this.onSellPint = new EventEmitter();
+  }
+  sellPint(sellPint:Keg){
+    sellPint.pint -= 1;
+    return sellPint;
+  }
 }
