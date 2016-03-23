@@ -1,20 +1,38 @@
 import { Component, EventEmitter } from 'angular2/core';
+import { KegComponent } from './keg.component';
 import { Keg } from './keg.model';
+import { EditKegDetailsComponent } from './edit-keg-details.component';
 import { NewKegComponent } from './new-keg.component';
 
 @Component ({
   selector: 'keg-list',
   inputs: ['kegList'],
-  directives: [NewKegComponent],
+  outputs: ['onKegSelect'],
+  directives: [KegComponent, EditKegDetailsComponent, NewKegComponent],
   template: `
+  <keg-display *ngFor="#currentKeg of kegList"
+  (click)="kegClicked(currentKeg)"
+  [class.selected]="currentKeg === selectedKeg"
+  [keg]="currentKeg">
+  </keg-display>
+  <edit-keg-details *ngIf="selectedTask" [task]="selectedTask">
+  </edit-keg-details>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   `
 })
 
 export class KegListComponent {
   public kegList: Keg[];
-
-  createKeg(beer:string , brewery:string , alcohol: number, price: number): void {
+  public onKegSelect: EventEmitter<Keg>;
+  public selectedKeg: Keg;
+  constructor() {
+    this.onKegSelect = new EventEmitter();
+  }
+  kegClicked(clickedKeg: Keg): void {
+    this.selectedKeg = clickedKeg;
+    this.onKegSelect.emit(clickedKeg);
+  }
+  createKeg(beer: string , brewery: string , alcohol: number, price: number): void {
     this.kegList.push(
       new Keg(beer, brewery, alcohol, price, this.kegList.length)
     );

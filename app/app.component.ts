@@ -8,8 +8,9 @@ import {Keg} from './keg.model';
   template: `
     <div class="container">
     <h1>Keg Room</h1>
-    <h3 *ngFor="#keg of kegs">{{ keg.beer }}, {{ keg.brewery }}</h3>
-    <keg-list [kegList]="kegs">
+    <keg-list
+    [kegList]="kegs"
+    (onKegSelect)="kegWasSelected($event)">
     </keg-list>
     </div>
   `
@@ -22,5 +23,8 @@ export class AppComponent {
       new Keg("1811 Beer", "Fort George Brewery",8, 60, 1),
       new Keg("1811 Beer", "Fort George Brewery",8, 60, 2),
     ];
+  }
+  kegWasSelected(clickedKeg: Keg): void {
+    console.log(clickedKeg);
   }
 }
