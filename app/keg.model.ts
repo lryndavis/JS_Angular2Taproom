@@ -7,4 +7,9 @@ export class Keg {
     public price: number,
     public id?: number) {
   }
+    public checkLevel(pint) {
+    if (this.pint <= 100) {
+      return "low";
+    }
+  }
 }

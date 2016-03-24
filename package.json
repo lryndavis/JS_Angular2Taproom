@@ -32,5 +32,13 @@
     "typescript": "^1.8.2",
     "typings": "^0.6.8"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lryndavis/angular_taproom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lryndavis/angular_taproom/issues"
+  },
+  "homepage": "https://github.com/lryndavis/angular_taproom#readme",
   "description": ""
 }
