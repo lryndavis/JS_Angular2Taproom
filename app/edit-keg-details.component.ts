@@ -5,12 +5,20 @@ import {Keg} from './keg.model';
   selector: 'edit-keg-details',
   inputs: ['keg'],
   template: `
-  <div class="keg-form">
-  <h3>Edit Keg Info:</h3>
-  <input [(ngModel)]="keg.beer" class="col-sm-8 input-lg keg-form" />
-  <input [(ngModel)]="keg.brewery" class="col-sm-8 input-lg keg-form" />
-  <input [(ngModel)]="keg.alcohol" class="col-sm-8 input-lg keg-form" />
-  <input [(ngModel)]="keg.price" class="col-sm-8 input-lg keg-form" />
+  <div>
+  <h3>Edit Keg Info for {{ keg.beer }}:</h3>
+  <fieldset class="form-group">
+  <input [(ngModel)]="keg.beer" class="col-sm-8 input-lg keg-form" class="form-control"/>
+  </fieldset>
+  <fieldset class="form-group">
+  <input [(ngModel)]="keg.brewery" class="col-sm-8 input-lg keg-form" class="form-control"/>
+  </fieldset>
+  <fieldset class="form-group">
+  <input [(ngModel)]="keg.alcohol" class="col-sm-8 input-lg keg-form" class="form-control"/>
+  </fieldset>
+  <fieldset class="form-group">
+  <input [(ngModel)]="keg.price" class="col-sm-8 input-lg keg-form" class="form-control"/>
+  </fieldset>
   </div>
   `
 })

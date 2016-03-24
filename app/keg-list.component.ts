@@ -12,18 +12,22 @@ import {SortPipe} from './sort.pipe';
   pipes: [SortPipe],
   directives: [KegComponent, EditKegDetailsComponent, NewKegComponent],
   template: `
-  <h3>Sort by Amount:</h3>
+  <div class="col-md-8">
+  <h3>Check your Keg Levels:</h3>
   <select (change)="onChange($event.target.value)" class="filter">
-    <option value="all">Show All</option>
-    <option value="low">Low</option>
+  <option value="all">Show All</option>
+  <option value="low">Low</option>
   </select>
   <keg-display *ngFor="#currentKeg of kegList | sort:filterSort"
   (click)="kegClicked(currentKeg)"
+  [class.fancy]="currentKeg.price >= 10"
+  [class.cheapo]="currentKeg.price < 10"
   [class.selected]="currentKeg === selectedKeg"
   [keg]="currentKeg">
   </keg-display>
   <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
   </edit-keg-details>
+  </div>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   `
 })

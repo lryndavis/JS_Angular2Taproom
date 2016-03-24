@@ -8,10 +8,14 @@ import {Keg} from './keg.model';
   <div>
   <h4>{{ keg.beer }}</h4>
   <p>Brewery: {{ keg.brewery }}</p>
-  <p>Alcohol Content: {{ keg.alcohol }}</p>
-  <p>Price per Keg: {{ keg.price }}</p>
+  <p>Alcohol Content: {{ keg.alcohol }} % </p>
+  <p>Price per Keg: $ {{ keg.price }}</p>
   <p>Pints Remaining: {{ keg.pint }}</p>
-  <button (click)="sellPint(keg)" class="btn btn-success">Sell a pint</button>
+  <button (click)="sellPint(keg)" class="btn btn-default">Sell a pint</button>
+  <button (click)="editKeg(keg)" class="btn btn-default">Edit Keg Info</button>
+  <div *ngIf="keg.pint < 120" class="kegWarning">
+  <p>CHANGE YR DAMN KEG OR SOMETHING!!!!!!!!</p>
+  </div>
   </div>
   `
 })
