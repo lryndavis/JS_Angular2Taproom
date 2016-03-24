@@ -1,4 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic|Playfair+Display:400,400italic,700,700italic,900,900italic);
+
+* {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 1.04em;
+}
+
+h1 {
+  font-family: 'Playfair Display';
+  font-weight: 400;
+  font-size: 4em;
+  font-style: italic;
+}
+
+h4 {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  color: #224d77;
+  font-size: 1.8em;
+}
+
+.beerName {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  color: #224d77;
+  font-size: 1em;
+  padding-top: 13px;
+}
+
+select {
+  width: 45%;
+  margin-bottom: 20px;
+
+}
+
+.kegWarning p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  font-weight: lighter;
+}
 
 .selected {
-  color: #22bdf0;
+  color: #4c8ccd;
+}
+
+.selected h4 {
+  color: #4c8ccd;
+}
+
+.add-button {
+  margin-bottom: 40px;
+}
+
+/*classes for sorting by color*/
+
+/*.fancy {
+}
+
+.cheapo {
+}*/
+
+h3 {
+  font-family: 'Playfair Display';
+  font-size: 1.9em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-family: 'Playfair Display';
+  font-size: 1.4em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+ input:-webkit-autofill:focus {
+   -webkit-box-shadow: 0 0 0px 1000px white inset;
+   border: 1px solid;
+ }
+
+ input:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0px 1000px white inset;
+   border: 1px solid;
+ }
+
+ .btn-default {
+  margin-top: 10px;
+  color: white;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+  background-color: white;
+  color: black;
+  border: 1px solid;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: black;
+  background-color: #ebf2f9;
 }

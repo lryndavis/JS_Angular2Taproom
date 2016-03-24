@@ -5,8 +5,8 @@ import {Keg} from './keg.model';
   selector: 'edit-keg-details',
   inputs: ['keg'],
   template: `
-  <div>
-  <h3>Edit Keg Info for {{ keg.beer }}:</h3>
+  <div class="col-md-4">
+  <h3 class="edit">Edit Keg Info for <span class="beerName">{{ keg.beer }}</span>:</h3>
   <fieldset class="form-group">
   <input [(ngModel)]="keg.beer" class="col-sm-8 input-lg keg-form" class="form-control"/>
   </fieldset>

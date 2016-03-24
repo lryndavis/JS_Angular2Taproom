@@ -25,10 +25,10 @@ import {SortPipe} from './sort.pipe';
   [class.selected]="currentKeg === selectedKeg"
   [keg]="currentKeg">
   </keg-display>
-  <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
-  </edit-keg-details>
   </div>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
+  <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
+  </edit-keg-details>
   `
 })
 
