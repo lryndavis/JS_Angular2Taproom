@@ -7,11 +7,11 @@ import {Keg} from './keg.model';
   directives: [KegListComponent],
   template: `
     <div class="container">
-    <h1>Check Out All These Kegs</h1>
-    <keg-list
-    [kegList]="kegs"
-    (onKegSelect)="kegWasSelected($event)">
-    </keg-list>
+      <h1>Check Out All These Kegs</h1>
+      <keg-list
+      [kegList]="kegs"
+      (onKegSelect)="kegWasSelected($event)">
+      </keg-list>
     </div>
   `
 })
@@ -20,8 +20,6 @@ export class AppComponent {
   constructor() {
     this.kegs = [
       new Keg("1811 Beer", "Fort George Brewery",8, 60, 0),
-      new Keg("Coors Light", "Gross",1, 5, 1),
-      new Keg("IRA", "Double Mountain",8, 60, 2),
     ];
   }
   kegWasSelected(clickedKeg: Keg): void {

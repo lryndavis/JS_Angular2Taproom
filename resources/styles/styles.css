@@ -6,11 +6,20 @@
   font-size: 1.04em;
 }
 
+/*Header Elements*/
+
 h1 {
   font-family: 'Playfair Display';
   font-weight: 400;
   font-size: 4em;
   font-style: italic;
+}
+
+h3 {
+  font-family: 'Playfair Display';
+  font-size: 1.9em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 h4 {
@@ -19,6 +28,15 @@ h4 {
   color: #224d77;
   font-size: 1.8em;
 }
+
+h5 {
+  font-family: 'Playfair Display';
+  font-size: 1.4em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/*Minor elements in body */
 
 .beerName {
   font-family: 'Playfair Display';
@@ -31,7 +49,6 @@ h4 {
 select {
   width: 45%;
   margin-bottom: 20px;
-
 }
 
 .kegWarning p {
@@ -48,31 +65,7 @@ select {
   color: #4c8ccd;
 }
 
-.add-button {
-  margin-bottom: 40px;
-}
-
-/*classes for sorting by color*/
-
-/*.fancy {
-}
-
-.cheapo {
-}*/
-
-h3 {
-  font-family: 'Playfair Display';
-  font-size: 1.9em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-h5 {
-  font-family: 'Playfair Display';
-  font-size: 1.4em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
+/*Text field inputs*/
 
  input:-webkit-autofill:focus {
    -webkit-box-shadow: 0 0 0px 1000px white inset;
@@ -84,10 +77,17 @@ h5 {
    border: 1px solid;
  }
 
+/*Button Styling */
+
+ .add-button {
+   margin-bottom: 40px;
+ }
+
  .btn-default {
   margin-top: 10px;
   color: white;
 }
+
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
   background-color: white;
   color: black;
